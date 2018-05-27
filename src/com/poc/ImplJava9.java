@@ -31,6 +31,7 @@ public class ImplJava9 {
 
   @SuppressWarnings({ "exports", "rawtypes" })
   public static HttpResponse getResponse(HttpRequest request) throws IOException, InterruptedException {
+    
     HttpResponse response = HttpClient.newBuilder().build().send(request, HttpResponse.BodyHandler.asString());
     System.out.println(response.statusCode());
     return response;

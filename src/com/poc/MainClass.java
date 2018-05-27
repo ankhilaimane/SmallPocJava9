@@ -16,6 +16,7 @@ public class MainClass extends ImplJava9 {
     HttpRequest hs = createRequestGet(s);
     String ss = getVersionHttpRequest(hs);
     System.out.println("supposed request version is : " + ss);
+    
     HttpResponse rep = getResponse(hs);
     HttpClient.Version vers = displayversion(rep);
     System.out.println("version  resp is " + vers);
