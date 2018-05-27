@@ -15,9 +15,6 @@ public class ImplJava9 {
 
   @SuppressWarnings("exports")
   public static HttpRequest createRequestGet(String str) throws URISyntaxException {
-    /*
-     * @SuppressWarnings("unused") HttpClient client = HttpClient.newHttpClient();
-     */
     @SuppressWarnings("unused")
     HttpClient client = HttpClient.newBuilder().proxy(ProxySelector.getDefault()).build();
     HttpRequest request = HttpRequest.newBuilder().uri(new URI(str)).version(HttpClient.Version.HTTP_2).GET().build();
