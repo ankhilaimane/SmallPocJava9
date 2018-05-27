@@ -1,5 +1,5 @@
 /**
- * @author imane
+ * @author Imane
  *
  */
 module moduletest {

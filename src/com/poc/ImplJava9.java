@@ -31,7 +31,7 @@ public class ImplJava9 {
 
   @SuppressWarnings({ "exports", "rawtypes" })
   public static HttpResponse getResponse(HttpRequest request) throws IOException, InterruptedException {
-    
+
     HttpResponse response = HttpClient.newBuilder().build().send(request, HttpResponse.BodyHandler.asString());
     System.out.println(response.statusCode());
     return response;
@@ -39,6 +39,7 @@ public class ImplJava9 {
 
   @SuppressWarnings("exports")
   public static HttpClient.Version displayversion(@SuppressWarnings("rawtypes") HttpResponse response) {
+
     HttpClient.Version s = null;
     if (response.statusCode() == 200) {
       s = response.version();
