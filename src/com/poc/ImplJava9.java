@@ -13,15 +13,13 @@ import jdk.incubator.http.HttpResponse;
 
 public class ImplJava9 {
 
-  @SuppressWarnings("exports")
-  public static HttpRequest createRequestGet(String str) throws URISyntaxException {
-    @SuppressWarnings("unused")
+  public HttpRequest createRequestGet(String str) throws URISyntaxException {
     HttpClient client = HttpClient.newBuilder().proxy(ProxySelector.getDefault()).build();
     HttpRequest request = HttpRequest.newBuilder().uri(new URI(str)).version(HttpClient.Version.HTTP_2).GET().build();
     return request;
   }
 
-  public static String getVersionHttpRequest(HttpRequest hr) throws URISyntaxException {
+  public String getVersionHttpRequest(HttpRequest hr) throws URISyntaxException {
 
     Optional<Version> vers = hr.version();
     String v = vers.toString();
@@ -29,16 +27,14 @@ public class ImplJava9 {
 
   }
 
-  @SuppressWarnings({ "exports", "rawtypes" })
-  public static HttpResponse getResponse(HttpRequest request) throws IOException, InterruptedException {
+  public HttpResponse getResponse(HttpRequest request) throws IOException, InterruptedException {
 
     HttpResponse response = HttpClient.newBuilder().build().send(request, HttpResponse.BodyHandler.asString());
     System.out.println(response.statusCode());
     return response;
   }
 
-  @SuppressWarnings("exports")
-  public static HttpClient.Version displayversion(@SuppressWarnings("rawtypes") HttpResponse response) {
+  public HttpClient.Version displayversion(HttpResponse response) {
 
     HttpClient.Version s = null;
     if (response.statusCode() == 200) {
