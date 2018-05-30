@@ -36,11 +36,11 @@ public class ImplJava9 {
 
   public HttpClient.Version displayversion(HttpResponse response) {
 
-    HttpClient.Version s = null;
+    HttpClient.Version version = null;
     if (response.statusCode() == 200) {
-      s = response.version();
+      version = response.version();
     }
-    return s;
+    return version;
   }
 
 }
